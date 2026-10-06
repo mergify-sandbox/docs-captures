@@ -1,0 +1,22 @@
+queue_rules:
+  - name: default
+    merge_conditions:
+      - check-success = test
+
+pull_request_rules:
+  - name: label documentation changes
+    conditions:
+      - files ~= ^docs/
+    actions:
+      label:
+        add:
+          - documentation
+
+  - name: queue approved pull requests
+    conditions:
+      - base = main
+      - "#approved-reviews-by >= 1"
+      - check-success = test
+      - label = ready-to-merge
+    actions:
+      queue:

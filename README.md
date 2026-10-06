@@ -1,2 +1,3 @@
 # docs-captures
-Public repository used only for documentation screenshots of GitHub pages. Throwaway content.
+
+Example repository used to take screenshots for the Mergify documentation.
