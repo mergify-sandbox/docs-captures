@@ -20,3 +20,11 @@ pull_request_rules:
       - label = ready-to-merge
     actions:
       queue:
+
+  - name: label large pull requests
+    conditions:
+      - "#files >= 10"
+    actions:
+      label:
+        add:
+          - large
