@@ -1,1 +1,6 @@
-also link the FAQ from the README
+Revision history for #13:
+
+rev 2 (content) 2026-10-12 09:11 UTC — also link the FAQ from the README
+rev 1 (initial) 2026-10-12 09:11 UTC
+
+<!-- mergify-revision-data: {"schema_version":1,"pull_number":13,"entries":[{"number":1,"change_type":"initial","old_sha":null,"new_sha":"a92d114eb6ee8651dcf102e1800890a35b1cf70f","timestamp_iso":"2026-10-12T09:11:04Z","reason":"","replay_sha":null,"compare_url":null},{"number":2,"change_type":"content","old_sha":"a92d114eb6ee8651dcf102e1800890a35b1cf70f","new_sha":"d667ba48d460360528abc7b878eed1089ab25dae","timestamp_iso":"2026-10-12T09:11:04Z","reason":"also link the FAQ from the README","replay_sha":null,"compare_url":"https://github.com/mergify-sandbox/docs-captures/compare/a92d114eb6ee8651dcf102e1800890a35b1cf70f...d667ba48d460360528abc7b878eed1089ab25dae"}]} -->
