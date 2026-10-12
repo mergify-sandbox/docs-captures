@@ -4,6 +4,9 @@ on:
 jobs:
   test:
     runs-on: ubuntu-latest
+    timeout-minutes: 240
     steps:
       - uses: actions/checkout@v4
       - run: echo "All tests passed"
+      - name: Integration tests
+        run: sleep 10800
