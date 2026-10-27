@@ -26,3 +26,44 @@ pull_request_rules:
       - base = stable
     actions:
       merge:
+
+merge_protections:
+  - name: 🤖 Continuous Integration
+    if:
+      - base = main
+      - head ~= ^scenario/merge-protections
+    success_conditions:
+      - check-success = test
+      - status-success = integration-tests
+
+  - name: 👀 Review Requirements
+    if:
+      - base = main
+      - head ~= ^scenario/merge-protections
+    success_conditions:
+      - "#changes-requested-reviews-by = 0"
+      - "#review-threads-unresolved = 0"
+
+  - name: Changelog requirements
+    description: Every change needs a changelog entry, or the no-changelog label.
+    if:
+      - base = main
+      - head ~= ^scenario/merge-protections
+    success_conditions:
+      - or:
+          - files = CHANGELOG.md
+          - label = no-changelog
+
+  - name: Enforce conventional commit
+    if:
+      - base = main
+      - head ~= ^scenario/merge-protections
+    success_conditions:
+      - "title ~= ^(feat|fix|docs|chore|refactor|test|ci)(\\(.+\\))?:"
+
+  - name: 📏 Linear history
+    if:
+      - base = main
+      - head ~= ^scenario/merge-protections
+    success_conditions:
+      - linear-history
